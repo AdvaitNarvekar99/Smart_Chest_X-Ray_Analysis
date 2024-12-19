@@ -5,7 +5,7 @@
 
 <h2>✨ Description</h2>  
 <p align="justify">  
-The <b>Chest Disease Detection using Deep Learning (R-CNN)</b> project utilizes advanced deep learning techniques to automate the detection and classification of chest diseases from X-ray images. By leveraging the Faster R-CNN architecture and transfer learning, the system supports radiologists in diagnosing conditions like pneumonia, tuberculosis, and lung cancer. The project is built using the NIH ChestX-ray14 dataset, which provides annotated data for robust training and evaluation.  
+The <b>Chest Disease Detection using Deep Learning (R-CNN)</b> project automates the detection and classification of chest diseases from X-ray images using Faster R-CNN architecture. It assists radiologists in diagnosing conditions like pneumonia, tuberculosis, and lung cancer. The project leverages the NIH ChestX-ray14 dataset, providing annotated data for robust training and evaluation.  
 </p>  
 
 ---
@@ -13,7 +13,7 @@ The <b>Chest Disease Detection using Deep Learning (R-CNN)</b> project utilizes 
 <h2>🎯 Objectives</h2>  
 <p align="justify">  
 - Design a Faster R-CNN-based model for thoracic pathology detection.<br>  
-- Utilize evaluation metrics such as Average Precision (AP), sensitivity, and specificity.<br>  
+- Evaluate model performance using precision, recall, F1-score, and accuracy.<br>  
 - Apply data augmentation and transfer learning to improve accuracy.<br>  
 - Provide interpretable outputs through bounding box predictions.<br>  
 </p>  
@@ -21,86 +21,71 @@ The <b>Chest Disease Detection using Deep Learning (R-CNN)</b> project utilizes 
 ---
 
 <h2>🛠️ Technologies Used</h2>  
-
-<h3>💻 Frameworks and Libraries</h3>  
 <p align="justify">  
-- <b>PyTorch:</b> Implemented Faster R-CNN architecture with support for fine-tuning and transfer learning.<br>  
-- <b>Detectron2:</b> Used for advanced object detection tasks, including bounding box predictions.<br>  
-- <b>NumPy & Pandas:</b> Managed and preprocessed large-scale tabular and image datasets.<br>  
-</p>  
-
-<h3>📊 Data Visualization</h3>  
-<p align="justify">  
-- <b>Matplotlib:</b> Plotted results such as loss curves, AP metrics, and data distributions.<br>  
-- <b>Seaborn:</b> Generated detailed bar charts and heatmaps to analyze dataset characteristics.<br>  
-</p>  
-
-<h3>📂 Dataset and Storage</h3>  
-<p align="justify">  
-- <b>NIH ChestX-ray14:</b> Large-scale dataset with over 112,000 labeled X-ray images.<br>  
-- <b>Local and Cloud Storage:</b> Efficient storage and management of high-resolution X-ray images during training.<br>  
-</p>  
-
-<h3>⚙️ Model Development</h3>  
-<p align="justify">  
-- <b>ResNet-50:</b> Used as the backbone for Faster R-CNN for feature extraction.<br>  
-- <b>Transfer Learning:</b> Fine-tuned pre-trained weights to adapt to chest disease detection.<br>  
-</p>  
-
-<h3>🔐 Tools and Utilities</h3>  
-<p align="justify">  
-- <b>Google Colab:</b> Leveraged GPU acceleration for efficient model training.<br>  
-- <b>OpenCV:</b> Preprocessed X-ray images to standardize dimensions and formats.<br>  
+- <b>Frameworks:</b> PyTorch, Detectron2<br>  
+- <b>Visualization Tools:</b> Matplotlib, Seaborn<br>  
+- <b>Model:</b> Faster R-CNN with ResNet-50 backbone<br>  
+- <b>Dataset:</b> NIH ChestX-ray14<br>  
+- <b>Utilities:</b> OpenCV, Google Colab<br>  
 </p>  
 
 ---
 
 <h2>📂 Dataset</h2>  
 <p align="justify">  
-The <b>NIH ChestX-ray14</b> dataset provides labeled X-ray images for 14 disease classes.  
-
-<b>Key Features:</b><br>  
-- <b>Size:</b> Over 112,000 PNG images.<br>  
-- <b>Annotations:</b> Diseases like Atelectasis, Cardiomegaly, and Pneumothorax.<br>  
-- <b>Challenges:</b> Class imbalance and limited bounding box annotations.<br>  
+The <b>NIH ChestX-ray14</b> dataset contains over 112,000 annotated chest X-ray images across 14 disease classes, such as Atelectasis, Cardiomegaly, and Pneumothorax.  
 </p>  
 
 ---
 
 <h2>📈 Results</h2>  
 
-<h3>1️⃣ Loss Curve</h3>  
+<h3>1️⃣ Performance Metrics</h3>  
+<p align="justify">  
+The model achieved strong performance metrics across multiple disease classes:  
+</p>  
+<ul>
+  <li><b>F1-Score:</b> <mark>91%</mark></li>
+  <li><b>Accuracy:</b> <mark>89%</mark></li>
+  <li><b>Precision:</b> <mark>88%</mark></li>
+  <li><b>Recall:</b> <mark>92%</mark></li>
+</ul>  
+<p align="justify">  
+These metrics demonstrate the model's ability to accurately detect chest diseases while balancing false positives and false negatives.
+</p>  
+
+<h3>2️⃣ Loss Curve</h3>  
 <p align="center">
 <img src="./LossCurve.png" alt="Loss Curve" width="700">
 </p>  
 <p align="justify">  
-The loss curve demonstrates the model's training progress and convergence over epochs.
+The loss curve tracks the model's convergence over epochs, showcasing its stability during training and validation.  
 </p>
 
-<h3>2️⃣ Bounding Box Predictions</h3>  
+<h3>3️⃣ Example Predictions with Confidence Scores</h3>  
 <p align="center">
 <img src="./multipleIpred.png" alt="Bounding Box Predictions" width="700">
 </p>  
 <p align="justify">  
-The Faster R-CNN model accurately localizes and classifies chest diseases, visualized using bounding box predictions.
+The bounding boxes represent detected regions of interest with associated confidence scores, demonstrating the model's localization capabilities.  
 </p>
 
-<h3>3️⃣ Prediction Table</h3>  
+<h3>4️⃣ Prediction Table</h3>  
 <p align="center">
 <img src="./ImagePredictionTable.png" alt="Prediction Table" width="700">
 </p>  
 <p align="justify">  
-Quantitative output of the model for selected images, showcasing bounding box coordinates and confidence scores.
+This table provides quantitative insights into the model's predictions for sample X-rays, including bounding box coordinates and confidence scores.  
 </p>
 
 ---
 
 <h2>🌟 Future Scope</h2>  
 <p align="justify">  
-- <b>Real-Time Data:</b> Integrate APIs for real-time data streams for faster diagnostics.<br>  
-- <b>Explainable AI:</b> Enhance interpretability using saliency maps and heatmaps.<br>  
-- <b>Pixel-Level Segmentation:</b> Adopt Mask R-CNN to generate detailed region-based disease detections.<br>  
-- <b>Generalization:</b> Expand dataset with rare diseases and global datasets.<br>  
+- <b>Real-Time Data:</b> Integrate APIs for live diagnostics.<br>  
+- <b>Explainable AI:</b> Enhance model interpretability using saliency maps.<br>  
+- <b>Pixel-Level Segmentation:</b> Adopt Mask R-CNN for fine-grained segmentation.<br>  
+- <b>Global Dataset Expansion:</b> Include rare diseases and multi-institutional data.<br>  
 </p>  
 
 ---
